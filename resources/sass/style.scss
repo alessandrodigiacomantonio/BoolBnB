@@ -1,0 +1,434 @@
+/*
+* //////////////////////////////////////////////////
+* ==================================================
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* C U S T O M   S T Y L E
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* ==================================================
+* //////////////////////////////////////////////////
+*/
+
+@import 'typography';
+@import 'sections/carousel-search';
+@import 'sections/main-search';
+@import 'sections/featured-ads';
+@import 'sections/footer';
+
+@import 'sections/dashboard';
+
+html {
+   scroll-behavior: smooth;
+   height: 100vh;
+   font-size: 16px;
+}
+
+body{
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+main{
+   padding-top: 54.42px;
+   flex-grow: 1;
+}
+
+.small-caps{
+   font-variant: small-caps;
+   letter-spacing: 4px;
+}
+
+*[class*="primary"]{
+   background: $primary!important;
+}
+
+a:hover{
+   text-decoration: none;
+}
+
+[class*="alert"]{ margin-bottom: 0;}
+
+
+
+
+
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* HEADER
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+header{
+   .navbar{
+      .icon-logo{
+         transform: rotate(-90deg);
+         font-size: 28px;
+         font-weight: 800;
+         vertical-align: text-bottom;
+         margin-right: 2px;
+      }
+      .container{
+         .hamburger{
+            border: none;
+            &:focus{
+               outline: none;
+            }
+         }
+         .navbar-collapse{
+            .nav-right{
+               .nav-item{
+                  .nav-avatar-img{
+                     width: 24px;
+                     height: 24px;
+                     border-radius: 50%;
+                     object-fit: cover;
+                     vertical-align: middle;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* HEADER MEDIAQUERY
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+@media screen and (max-width:780px) {
+   .dropdown-menu-right{
+      background: darken($primary,10);
+      border:none;
+      .dropdown-item{
+      @include text-contrast(darken($primary,10));
+      margin-left: 10px;
+      margin-right: 10px;
+      width: auto;
+         &:hover{
+            background-color:$primary;
+         }
+      }
+   }
+}
+
+
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* REGISTERED APARTMENTS INDEX
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+.add-apartment{
+   a, a:link, a:visited, a:active, a:focus{
+      text-decoration: none;
+      font-variant: small-caps;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: initial;
+      font-size: 1.5rem;
+      span{
+         border-bottom: 1px solid lighten($dark, 50);
+         padding-bottom: 2.5px;
+      }
+   }
+}
+.dash{
+   &:not(:last-child){
+      margin-bottom: 16px;
+   }
+   &.card{
+      display: flex;
+      flex-flow: row wrap;
+
+      .card-image{
+         width: 45%;
+         height: 330px;
+         img{
+            height: 100%;
+            border-radius: 0;
+            object-fit: cover;
+         }
+      }
+      .card-body{
+         position: relative;
+         width: 55%;
+         padding: 2.25em;
+         display: flex;
+         flex-flow: column wrap;
+         justify-content: space-between;
+         &-text{
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            select{
+              width: 100%;
+              option{
+                width: 100px;
+              }
+            }
+            .card-distance{
+              span+span{
+                margin-left: 10px;
+              }
+            }
+         }
+         .card-title, .card-text{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+         }
+         .apartment-card-status{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: red;
+            box-shadow: 0px 0px 2px 1px lighten(red, 10);
+
+         }
+         .apartment-card-status.published{
+            background-color: green;
+            box-shadow: 0px 0px 2px 1px lighten(green, 10);
+
+         }
+      }
+      .card-dash-buttons{
+         display: flex;
+         flex-wrap: wrap;
+         a.card-dash-buttons-link, form{
+            margin: 8px;
+         }
+
+      }
+   }
+}
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* MEDIAQUERY REGISTERED APARTMENTS INDEX
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+@media screen and (max-width: 768px) {
+  .card-image{
+    display: none;
+  }
+}
+
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* REGISTERED APARTMENTS SHOW
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.layout-apartment{
+   display: flex;
+   flex-flow: row wrap;
+
+   .main-content{
+      padding: 40px 0 48px;
+      flex: 2;
+      margin-right: 32px;
+      img{
+         width: 100%;
+         max-height: 400px;
+         object-fit: cover;
+      }
+
+      .apartment-header{
+
+         .apartment-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex: 3;
+         }
+
+         .apartment-price{
+            flex: 1;
+            position: relative;
+            .apartment-price-label{
+               display: inline-block;
+               border-left: 3px solid $primary;
+               padding-left: 4px;
+               margin-bottom: 16px;
+
+               span.badge{
+                  background: $primary;
+                  font-size: 18px;
+                  @include text-contrast($primary);
+               }
+            }
+            a.edit-icon{
+               font-size: 12px;
+               position: absolute;
+               right: 0;
+            }
+         }
+      }
+
+
+      .apartment-desc-text{
+         padding-bottom: 24px;
+         margin-bottom: 32px;
+         text-align: justify;
+      }
+
+      &.apartment-show{
+         section:not(:last-child){ margin-bottom: 60px;}
+      }
+
+      .apartment-details-list{
+         display: flex;
+         justify-content: space-between;
+         .details-item{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+
+            &:nth-child(2){
+               margin: 0 8px;
+            }
+
+            .icon{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               width: 16px;
+               height: 16px;
+               padding: 20px;
+               border-radius: 50%;
+               margin-right: 8px;
+               font-size: 16px;
+               background: $primary;
+               @include text-contrast($primary);
+            }
+            p{ margin-bottom: 0; }
+         }
+
+      }
+
+      .apartment-features{
+         .apartment-features-list{
+            span{
+                  margin-right: 32px;
+
+                  i{
+                     margin-right: 4px;
+                     color: $primary;
+
+                     &.fas.fa-parking{
+                        font-size: 16px;
+                     }
+
+                     &.fas.fa-wifi{
+                        position: relative;
+                        bottom: 1px;
+                        font-size: 14px;
+                     }
+                  }
+            }
+         }
+      }
+      #map{
+         width: 100%;
+         height: 500px;
+      }
+      #marker {
+         background-image: url("../../public/default_images/apartment_marker.png");
+         background-size: cover;
+         width: 50px;
+         height: 50px;
+      }
+   }
+   .sidebar{
+      flex: 1;
+
+      .sidebar-content{
+         background-color: $primaryLight;
+         padding: calc(112px - 56.42px) 24px 16px;
+         border-bottom: 2px solid $primary;
+         position: fixed;
+         .sidebar-message{
+            margin-bottom: 16px;
+            label{
+               font-weight: 800;
+               color: $primary;
+            }
+            .message-title{
+               text-transform: uppercase;
+               font-weight: 800;
+               padding: 8px;
+               background-color: lighten($primary,5);
+               @include text-contrast(lighten($primary,5));
+               margin-bottom: 16px;
+
+               .icon{ margin-right: 5px;}
+            }
+            .form-control{
+               border: 2px solid $primary;
+               background: #fff;
+            }
+         }
+      }
+   }
+}
+
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* MEDIA QUERY
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@media screen and(max-width: 992px){
+
+   .layout-apartment{
+
+      .main-content{
+        flex-basis: 100%;
+        padding-right: 0;
+        margin-right: 0;
+        border-right: none;
+      }
+
+      .sidebar .sidebar-content{
+        position: relative;
+        width: 100%;
+        padding: 24px;
+        border-top: 2px solid $primary;
+        border-bottom: none;
+      }
+
+   }
+
+}
+
+
+@media screen and(max-width: 768px){
+
+   .apartment-details-list{
+      flex-flow: column wrap;
+      .details-item{
+
+         &:nth-child(2){
+            margin: 8px 0!important;
+         }
+      }
+
+   }
+
+}
+
+@media screen and(max-width: 425px){
+
+   // .layout-apartment .main-content .apartment-header .apartment-price a.edit-icon{
+   .apartment-price a.edit-icon{
+      position: relative!important;
+      display: block;
+      margin-bottom: 16px;
+
+   }
+
+}

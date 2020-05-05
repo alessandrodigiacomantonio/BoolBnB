@@ -1,0 +1,67 @@
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* FEATURED ADS IN INDEX
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.ads{
+   padding: calc(16px * 4) 0;
+
+   a:hover{ color: $primary; }
+
+   .card{
+      &:hover{
+         transform: scale(1.02);
+         box-shadow: 0px 0px 5px 2px #e7e5e5;;
+      }
+      &:active{
+        transform: scale(1);
+      }
+      margin-bottom: 32px;
+      transition: 0.2s;
+      .card-body{
+         width: 100%;
+         min-height: 150px;
+         display: flex;
+         flex-flow: column wrap;
+         justify-content: space-between;
+      }
+      .card-footer{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         .text-muted{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 24px;
+            width: 100px;
+         }
+      }
+   }
+}
+
+
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* FEATURED ADS IN FILTER
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.filter-ads{
+   .card{
+      border: 6px solid #c7b35b;
+
+      .card-body{
+         position: relative;
+
+         .icon-ads{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 36px;
+            color: #c7b35b;
+         }
+      }
+   }
+}

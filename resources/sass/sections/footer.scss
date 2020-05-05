@@ -1,0 +1,27 @@
+footer{
+   background: $primary;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @include text-contrast($primary);
+   padding: 24px;
+   margin-top: 20px;
+
+   p{
+     margin: 0;
+   }
+
+}
+
+/*
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+* MEDIA QUERY
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+@media screen and (max-width: 768px) {
+  footer{
+    p{
+      font-size: 80%;
+    }
+  }
+}
